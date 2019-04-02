@@ -1,0 +1,30 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#ddd",
+    "navigationBarTitleText": "201710070217-邢西峰",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#33ffdd",
+    "backgroundTextStyle": "dark",
+    "enablePullDownRefresh":true
+  },
+  "tabBar":{
+    "color":"#000000",
+    "selectedColor":"#66ff",
+    "list":[{
+      "pagePath":"pages/index/index",
+      "text":"index",
+      "iconPath":"pages/icon/home.png",
+      "selectedIconPath":"pages/icon/home-s.png"
+    },{
+      "pagePath": "pages/logs/logs",
+      "text": "logs",
+      "iconPath": "pages/icon/log.png",
+      "selectedIconPath": "pages/icon/log-s.png"
+    }]
+  },
+  "sitemapLocation": "sitemap.json"
+}
