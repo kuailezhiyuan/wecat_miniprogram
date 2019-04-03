@@ -4,13 +4,33 @@ const app = getApp()
 
 Page({
   data: {
-    motto: 'Hello Klzy',
+    motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    message: '数据绑定内容案例',
+    id: 0,
+    condition: true,
+    flag: false,
+    a: 1,
+    b: 2,
+    c: 3,
+    length: 6,
+    name: "济南职业学院云计算",
+    object: {
+      key: 'Hello '
+    },
+    array: ['济南职业学院云计算'],
+    zero: 0,
+    array: [{
+      message: 'foo',
+    }, {
+      message: 'bar'
+    }]
+
   },
   //事件处理函数
-  bindViewTap: function() {
+  bindViewTap: function () {
     wx.navigateTo({
       url: '../logs/logs'
     })
@@ -21,7 +41,7 @@ Page({
         userInfo: app.globalData.userInfo,
         hasUserInfo: true
       })
-    } else if (this.data.canIUse){
+    } else if (this.data.canIUse) {
       // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
       // 所以此处加入 callback 以防止这种情况
       app.userInfoReadyCallback = res => {
@@ -43,12 +63,16 @@ Page({
       })
     }
   },
-  getUserInfo: function(e) {
+  getUserInfo: function (e) {
     console.log(e)
     app.globalData.userInfo = e.detail.userInfo
     this.setData({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
+  },
+  bindresult: function (e) {
+    var id = e.target.id
+    console.log("组件ID:" + id)
   }
 })

@@ -7,7 +7,33 @@
       <text class="userinfo-nickname">{{userInfo.nickName}}</text>
     </block>
   </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
+  <view> {{ message }} </view>
+  <view id="item-{{id}}" bindtap='bindresult'> 组件属性案例</view>
+  <view wx:if="{{condition}}"> 控制属性</view>
+  <checkbox checked="false">选择框</checkbox>
+  <view hidden="{{flag ? true : false}}"> 三元运算</view>
+  <view> {{a + b}} + {{c}} + d </view>
+  <view wx:if="{{length > 5}}">逻辑判断案例 </view>
+  <view>{{"hello" + name}}</view>
+  <view>{{object.key}} {{array[0]}}</view>
+  <view wx:for-items="{{[zero, 1, 2, 3, 4]}}"> {{item}} </view>
+  <template name="objectCombine">
+  <view>{{for}}</view>
+  <view>{{bar}}</view>
+  </template>
+<template is="objectCombine" data="{{for: a, bar: b}}"></template>
+<view wx:for="{{array}}">
+  {{index}}: {{item.message}}
+</view>
+<view wx:for="{{array}}" wx:for-index="idx" wx:for-item="itemName">
+  {{idx}}: {{itemName.message}}
+</view>
+<view wx:for="{{[1, 2, 3, 4, 5, 6, 7, 8, 9]}}" wx:for-item="i">
+  <view wx:for="{{[1, 2, 3, 4, 5, 6, 7, 8, 9]}}" wx:for-item="j">
+    <view wx:if="{{i <= j}}">
+      {{i}} * {{j}} = {{i * j}}
+    </view>
   </view>
+</view>
+
 </view>
