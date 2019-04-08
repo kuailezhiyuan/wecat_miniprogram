@@ -1,2 +1,6 @@
 <!--pages/info.wxml-->
-<text>pages/info.wxml</text>
+<view style='text-align:center;font-size:25px;'>
+<text>姓名：{{ name }}\n</text>
+<text>性别：{{ sex }}\n</text>
+<text>年龄：{{ age }}岁\n</text>
+</view>
